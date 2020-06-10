@@ -3,13 +3,57 @@
     <head>
         <title>Whisne Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link href="light/css/lightbox.css" rel="stylesheet" />
+        <script src="light/js/lightbox-plus-jquery.js"></script>
+        <script>
+            function do_move() {
+                var x = document.getElementById("container");
+                if (x.scrollTop < 1300) {
+                    document.getElementById("bg-image").style.backgroundPosition  = "calc(50% - 140px) calc(50% + " +x.scrollTop/12+ "px)";
+                }
+            }
+        </script>
     </head>
     <body>
-        <div class="container">
-            <div class="bg-image"></div>
+        <div id="bg-image"></div>
+        <div id="container" onscroll="do_move()">
             <div class="content">
                 <h1>(Whisne)</h1>
                 <h2>VRChat Avatar Maker and 3D Artist</h2>
+                <h3><u>About Me:</u></h3>
+                <p>Hi! I'm Whisne and I've been doing VRChat avatars for a long time. I've done about +80 commissions (below you can see some of them).</p>
+                <p>I always make sure to make the avatars as close as possible to what my customers want.</p>
+                <p>That's why I always ask for references and do daily updates of the progress to ensure everything is looking good for you!</p>
+                <p>Feel free to ask me anything on discord: Whisne#0989</p>
+                <h3><u>Things I do:</u></h3>
+                <p>- Avatars From Scratch</p>
+                <p>- Avatar Merging</p>
+                <p>- Clothes & Outfits</p>
+                <p>- Dynamic bones</p>
+                <p>- Custom gestures</p>
+                <p>- Custom animations / particles</p>
+                <p>- Weapons & Props</p>
+                <h3><u>Some of my previous work:</u></h3>
+                <div class="gallery">
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                    <a href="images/Cat03.jpg" data-lightbox="roadtrip">
+                        <img src="images/Cat03.jpg">
+                    </a>
+                </div>
             </div>
         </div>
     </body>
