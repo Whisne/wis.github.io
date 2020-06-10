@@ -68,7 +68,7 @@ html, body {
 }
 
 #bg-image {
-    transform: scale(1.4) translate(0, 0);
+    transform: scale(1.4) translate(0, 0) rotateX(0);
     object-fit: cover;
     padding: 0;
     margin: 0;
@@ -108,11 +108,11 @@ html, body {
 
 @media (max-width: 800px) {
     #bg-image {
-        -webkit-filter: blur(0.4px);
-        -moz-filter: blur(0.4px);
-        -o-filter: blur(0.4px);
-        -ms-filter: blur(0.4px);
-        filter: blur(0.4px);
+        -webkit-filter: blur(1px);
+        -moz-filter: blur(1px);
+        -o-filter: blur(1px);
+        -ms-filter: blur(1px);
+        filter: blur(1px);
     }
 }
 
