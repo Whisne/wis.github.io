@@ -8,15 +8,15 @@
         <script>
             function do_move() {
                 var x = document.getElementById("container");
-                if (x.scrollTop < 1300) {
-                    document.getElementById("bg-image").style.backgroundPosition  = "calc(50% - 140px) calc(50% + " +x.scrollTop/12+ "px)";
+                if (x.scrollTop < 1000) {
+                    document.getElementById("bg-image").style.transform  = "scale(1.4) translate(0, "+x.scrollTop/12+ "px)";
                 }
             }
         </script>
     </head>
     <body>
         <img src="images/back.gif" id="bg-image"></div>
-        <div id="container">
+        <div id="container" onscroll="do_move()">
             <div class="content">
                 <h1>(Whisne)</h1>
                 <h2>VRChat Avatar Maker and 3D Artist</h2>
