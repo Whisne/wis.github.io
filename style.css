@@ -7,7 +7,6 @@ html, body {
 }
 
 #container{
-    background-color: aqua;
     position: relative;
     overflow: hidden scroll;
     width: 100%;
