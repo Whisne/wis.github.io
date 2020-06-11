@@ -103,13 +103,13 @@ html, body {
 }
 
 .item{
-    width: 400px;
-    margin-bottom: 20px;
+    width: calc(25% - 15px);
+    margin:0 auto 20px auto;
 }
 
 .item--gigante{
-    width: 800px;
-    margin-bottom: 20px;
+    width: calc(50% - 10px);
+    margin:0 auto 20px auto;
 }
 
 .item:hover{
@@ -130,22 +130,10 @@ html, body {
         -ms-filter: blur(1px);
         filter: blur(1px);
     }
-
-    .item{
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    .item--gigante{
-        width: 300px;
-        margin-bottom: 20px;
-    }
     .content{
         position: absolute;
         width: 100%;
         padding: 10px;
-        padding-left: 0px;
-        padding-right: 0px;
     }
 }
 
