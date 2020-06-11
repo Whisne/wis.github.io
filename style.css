@@ -103,12 +103,12 @@ html, body {
 }
 
 .item{
-    width: calc(50% - 10px);
+    width: calc(25% - 15px);
     margin:0 auto 20px auto;
 }
 
 .item--gigante{
-    width: 100%;
+    width: calc(50% - 10px);
     margin:0 auto 20px auto;
 }
 
@@ -123,6 +123,17 @@ html, body {
 }
 
 @media (max-width: 800px) {
+
+    .item{
+        width: calc(50% - 10px);
+        margin:0 auto 20px auto;
+    }
+    
+    .item--gigante{
+        width: 100%;
+        margin:0 auto 20px auto;
+    }
+
     #bg-image {
         -webkit-filter: blur(1px);
         -moz-filter: blur(1px);

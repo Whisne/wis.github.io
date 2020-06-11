@@ -3,7 +3,7 @@
     <head>
         <title>Whisne Portfolio</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale =1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale =1.0">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -14,17 +14,19 @@
                 <h2>VRChat Avatar Maker and 3D Artist</h2>
                 <h3><u>About Me:</u></h3>
                 <p>Hi! I'm Whisne and I've been doing VRChat avatars for a long time. I've done about +80 commissions (below you can see some of them).</p>
-                <p>I always make sure to make the avatars as close as possible to what my customers want.</p>
+                <p>I offer high quality avatar and a quick deliver time.</p>
+                <p>My priority is to make sure the avatars are as close as possible to what my customers want.</p>
                 <p>That's why I always ask for references and do daily updates of the progress to ensure everything is looking good for you!</p>
                 <p>Feel free to ask me anything on discord: Whisne#0989</p>
                 <h3><u>Things I do:</u></h3>
-                <p>- Avatars From Scratch</p>
+                <p>- Avatars From Scratch (Furries included)</p>
                 <p>- Avatar Merging</p>
                 <p>- Clothes & Outfits</p>
                 <p>- Dynamic bones</p>
                 <p>- Custom gestures</p>
                 <p>- Custom animations / particles</p>
                 <p>- Weapons & Props</p>
+                <p>- NSFW</p>
                 <h3><u>Some of my previous work:</u></h3>
                 <p id="new">(Click on them to expand)</p>
                 <div id="gallery">
@@ -41,6 +43,7 @@
             </div>
         </div>
         <script src="js/masonry.pkgd.js"></script>
+        <script src="js/imagesloaded.pkgd.js"></script>
         <script>
             var elem = document.querySelector('#gallery');
             var msnry = new Masonry( elem, {
@@ -50,6 +53,10 @@
                 gutter: 20,
                 stagger: 30,
                 transitionDuration: '0.8s'
+            });
+
+            imagesLoaded( '#gallery', function(){
+                msnry.layout();
             });
 
             elem.addEventListener( 'click', function( event ) {
