@@ -6,6 +6,12 @@ html, body {
     overflow: hidden;
 }
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 #container{
     position: relative;
     overflow-x: hidden;
@@ -26,7 +32,6 @@ html, body {
     z-index: 2;
     align-items: center;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .content h1{
@@ -86,25 +91,35 @@ html, body {
     filter: blur(2px);
 }
 
-.gallery{
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+#gallery{
+    margin: 0 auto;
+    width: 100%;
 }
 
-.gallery a{
-    flex-basis: 30%;
-    margin: 20px;
+#gallery:after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
-.gallery img{
-    min-width: 300px;
-    width: 90%;
-    margin: 0;
-    padding: 0;
+.item{
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.item--gigante{
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.item:hover{
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+#new {
+    font-size: 24px;
+    transform: translate(0px, -10px);
 }
 
 @media (max-width: 800px) {
@@ -114,6 +129,13 @@ html, body {
         -o-filter: blur(1px);
         -ms-filter: blur(1px);
         filter: blur(1px);
+    }
+    .content{
+        position: absolute;
+        width: 100%;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 

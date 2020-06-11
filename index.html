@@ -5,14 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale =1.0">
         <link rel="stylesheet" href="style.css">
-        <script>
-            function do_move() {
-                var x = document.getElementById("container");
-                if (x.scrollTop < 1000) {
-                    document.getElementById("bg-image").style.transform  = "scale(1.4) translate(0, "+x.scrollTop/12+ "px)";
-                }
-            }
-        </script>
     </head>
     <body>
         <img src="images/back.gif" id="bg-image"></div>
@@ -34,27 +26,49 @@
                 <p>- Custom animations / particles</p>
                 <p>- Weapons & Props</p>
                 <h3><u>Some of my previous work:</u></h3>
-                <div class="gallery">
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
-                    <a href="images/Cat03.jpg">
-                        <img src="images/Cat03.jpg">
-                    </a>
+                <p id="new">(Click on them to expand)</p>
+                <div id="gallery">
+                    <img class="item" src="images/witch.png">
+                    <img class="item" src="images/whisne.png">
+                    <img class="item" src="images/paw.png">
+                    <img class="item" src="images/fur.png">
+                    <img class="item" src="images/selfie.png">
+                    <img class="item" src="images/lhd.png">
+                    <img class="item" src="images/jutsu.png">
+                    <img class="item" src="images/yoyo.png">
+                    <img class="item" src="images/pen.png">
                 </div>
             </div>
         </div>
+        <script src="js/masonry.pkgd.js"></script>
+        <script>
+            var elem = document.querySelector('#gallery');
+            var msnry = new Masonry( elem, {
+                // options
+                itemSelector: '.item',
+                fitWidth: true,
+                gutter: 20,
+                stagger: 30,
+                transitionDuration: '0.8s'
+            });
+
+            elem.addEventListener( 'click', function( event ) {
+                // don't proceed if item was not clicked on
+                if ( !matchesSelector( event.target, '.item' ) ) {
+                    return;
+                }
+                // change size of item via class
+                event.target.classList.toggle('item--gigante');
+                // trigger layout
+                msnry.layout();
+            });
+
+            function do_move() {
+                var x = document.getElementById("container");
+                if (x.scrollTop < 1000) {
+                    document.getElementById("bg-image").style.transform  = "scale(1.4) translate(0, "+x.scrollTop/12+ "px)";
+                }
+            }
+        </script>
     </body>
 </html>
