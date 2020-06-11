@@ -103,12 +103,12 @@ html, body {
 }
 
 .item{
-    width: calc(25% - 15px);
+    width: calc(50% - 10px);
     margin:0 auto 20px auto;
 }
 
 .item--gigante{
-    width: calc(50% - 10px);
+    width: 100%;
     margin:0 auto 20px auto;
 }
 
