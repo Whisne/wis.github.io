@@ -5,10 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
     </head>
     <body>
         <div id="img-cont">
-            <img src="images/back.gif" id="bg-image">
+            <img data-src="images/back-compressor.gif" id="bg-image">
         </div>
         <div id="container" onscroll="do_move()">
             <div class="content">
@@ -32,21 +33,28 @@
                 <h3><u>Some of my previous work:</u></h3>
                 <p id="new">(Click on them to expand)</p>
                 <div id="gallery">
-                    <img class="item" src="images/witch.png">
-                    <img class="item" src="images/whisne.png">
-                    <img class="item" src="images/paw.png">
-                    <img class="item" src="images/fur.png">
-                    <img class="item" src="images/selfie.png">
-                    <img class="item" src="images/lhd.png">
-                    <img class="item" src="images/jutsu.png">
-                    <img class="item" src="images/yoyo.png">
-                    <img class="item" src="images/pen.png">
+                    <img class="item" data-src="images/witch-compressor.png">
+                    <img class="item" data-src="images/whisne-compressor.png">
+                    <img class="item" data-src="images/paw-compressor.png">
+                    <img class="item" data-src="images/fur-compressor.png">
+                    <img class="item" data-src="images/selfie-compressor.png">
+                    <img class="item" data-src="images/lhd-compressor.png">
+                    <img class="item" data-src="images/jutsu-compressor.png">
+                    <img class="item" data-src="images/yoyo-compressor.png">
+                    <img class="item" data-src="images/pen-compressor.png">
                 </div>
             </div>
         </div>
-        <script src="js/masonry.pkgd.js"></script>
-        <script src="js/imagesloaded.pkgd.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
         <script>
+            var lazyLoadInstance = new LazyLoad({
+                elements_selector: ".item",
+                callback_finish: DoLayout
+            });
+            var lazyLoadInstance2 = new LazyLoad({
+                elements_selector: "#bg-image"
+                // ... more custom settings?
+            });
             var elem = document.querySelector('#gallery');
             var msnry = new Masonry( elem, {
                 // options
@@ -57,9 +65,9 @@
                 transitionDuration: '0.8s'
             });
 
-            imagesLoaded( '#gallery', function(){
+            function DoLayout(){
                 msnry.layout();
-            });
+            }
 
             elem.addEventListener( 'click', function( event ) {
                 // don't proceed if item was not clicked on
