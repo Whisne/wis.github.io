@@ -73,6 +73,15 @@ html, body {
     margin: 5px;
 }
 
+#img-cont {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
 #bg-image {
     transform: scale(1.4) translate(0, 0);
     object-fit: cover;
@@ -80,7 +89,6 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
-
     position: absolute;
     
 
